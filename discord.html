@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08070a">
 <title>VØRKNYX MC — Discord</title>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -11,19 +12,41 @@
 
 <div class="discord-bg"></div>
 
-<header>
-    <a class="brand" href="index.html">⚡ VØRKNYX <span>MC</span></a>
+<header class="site-header">
+
+    <a class="brand" href="index.html">
+        ⚡ VØRKNYX <b>MC</b>
+    </a>
 
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-    <nav id="nav">
-        <a href="index.html">HOME</a>
-        <a href="server.html">SERVER</a>
-        <a href="modes.html">GAME MODES</a>
-        <a href="rules.html">RULES</a>
-        <a class="active" href="discord.html">DISCORD</a>
+    <nav id="nav" class="main-nav">
+
+        <a href="index.html">
+            <span>⌂</span> HOME
+        </a>
+
+        <a href="server.html">
+            <span>⚔</span> SERVER
+        </a>
+
+        <a href="modes.html">
+            <span>◆</span> GAME MODES
+        </a>
+
+        <a href="rules.html">
+            <span>📜</span> RULES
+        </a>
+
+        <a class="active discord-nav"
+           href="discord.html">
+            <span>◈</span> DISCORD
+        </a>
+
     </nav>
+
 </header>
+
 
 <main class="discord-main">
 
@@ -31,7 +54,9 @@
         ◈
     </div>
 
-    <small>THE COMMUNITY</small>
+    <small>
+        THE COMMUNITY
+    </small>
 
     <h1>
         WELCOME TO
@@ -43,32 +68,63 @@
         players, events, giveaways, server updates and more.
     </p>
 
+
     <div class="community-grid">
 
+
         <div>
+
             <b>⚔</b>
-            <strong>SERVER UPDATES</strong>
-            <span>Stay updated with everything.</span>
+
+            <strong>
+                SERVER UPDATES
+            </strong>
+
+            <span>
+                Stay updated with everything.
+            </span>
+
         </div>
 
+
         <div>
+
             <b>🎁</b>
-            <strong>EVENTS & GIVEAWAYS</strong>
-            <span>Don't miss community events.</span>
+
+            <strong>
+                EVENTS & GIVEAWAYS
+            </strong>
+
+            <span>
+                Don't miss community events.
+            </span>
+
         </div>
 
+
         <div>
+
             <b>💬</b>
-            <strong>ACTIVE COMMUNITY</strong>
-            <span>Meet other adventurers.</span>
+
+            <strong>
+                ACTIVE COMMUNITY
+            </strong>
+
+            <span>
+                Meet other adventurers.
+            </span>
+
         </div>
+
 
     </div>
+
 
     <a
         class="discord-button"
         href="https://discord.gg/DkYDvR8kQ"
         target="_blank"
+        rel="noopener"
     >
         JOIN THE DISCORD
         <span>↗</span>
@@ -76,6 +132,8 @@
 
 </main>
 
+
 <script src="script.js"></script>
+
 </body>
 </html>
