@@ -1,24 +1,85 @@
+/* =========================================
+   MOBILE MENU
+========================================= */
+
 function toggleMenu(){
 
     const nav = document.getElementById("nav");
 
-    if(nav){
-        nav.classList.toggle("open");
-    }
+    if(!nav) return;
+
+    nav.classList.toggle("open");
 
 }
 
 
+/* =========================================
+   CLOSE MENU AFTER CLICK
+========================================= */
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+    const links =
+        document.querySelectorAll(".main-nav a");
+
+    const nav =
+        document.getElementById("nav");
+
+    links.forEach(link=>{
+
+        link.addEventListener("click",()=>{
+
+            if(nav){
+                nav.classList.remove("open");
+            }
+
+        });
+
+    });
+
+});
+
+
+/* =========================================
+   COPY SERVER IP
+========================================= */
+
 function copyText(text,button){
 
-    navigator.clipboard.writeText(text).then(()=>{
+    if(!navigator.clipboard){
 
-        const old = button.innerText;
-
-        button.innerText = "COPIED ✓";
+        button.innerText="COPY FAILED";
 
         setTimeout(()=>{
-            button.innerText = old;
+            button.innerText="COPY";
+        },1500);
+
+        return;
+    }
+
+    navigator.clipboard.writeText(text)
+    .then(()=>{
+
+        const oldText =
+            button.innerText;
+
+        button.innerText="COPIED ✓";
+
+        setTimeout(()=>{
+
+            button.innerText=oldText;
+
+        },1500);
+
+    })
+    .catch(()=>{
+
+        button.innerText="COPY FAILED";
+
+        setTimeout(()=>{
+
+            button.innerText="COPY";
+
         },1500);
 
     });
@@ -26,45 +87,37 @@ function copyText(text,button){
 }
 
 
-/* close mobile menu */
-
-document.querySelectorAll("nav a").forEach(link=>{
-
-    link.addEventListener("click",()=>{
-
-        const nav = document.getElementById("nav");
-
-        if(nav){
-            nav.classList.remove("open");
-        }
-
-    });
-
-});
-
-
-/* small desktop parallax */
+/* =========================================
+   DESKTOP MOUSE MOVEMENT
+========================================= */
 
 if(window.innerWidth > 850){
 
-    document.addEventListener("mousemove",(e)=>{
+    document.addEventListener(
+        "mousemove",
+        (event)=>{
 
-        const x =
-            (e.clientX / window.innerWidth - .5);
+            const x =
+                event.clientX /
+                window.innerWidth;
 
-        const y =
-            (e.clientY / window.innerHeight - .5);
+            const y =
+                event.clientY /
+                window.innerHeight;
 
-        document.documentElement.style.setProperty(
-            "--mx",
-            `${x * 10}px`
-        );
+            document.documentElement.style
+                .setProperty(
+                    "--mouse-x",
+                    `${(x-.5)*10}px`
+                );
 
-        document.documentElement.style.setProperty(
-            "--my",
-            `${y * 10}px`
-        );
+            document.documentElement.style
+                .setProperty(
+                    "--mouse-y",
+                    `${(y-.5)*10}px`
+                );
 
-    });
+        }
+    );
 
 }
