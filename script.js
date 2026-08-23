@@ -1,193 +1,70 @@
-/* ================= LOADER ================= */
+function toggleMenu(){
 
-window.addEventListener("load", () => {
+    const nav = document.getElementById("nav");
 
-    setTimeout(() => {
-
-        document
-            .getElementById("loader")
-            .classList.add("hide");
-
-    }, 2100);
-
-});
-
-
-/* ================= MOBILE MENU ================= */
-
-function menu(){
-
-    document
-        .getElementById("nav")
-        .classList.toggle("active");
-
-}
-
-
-/* CLOSE MOBILE MENU */
-
-document.querySelectorAll("#nav a").forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        document
-            .getElementById("nav")
-            .classList.remove("active");
-
-    });
-
-});
-
-
-/* ================= COPY IP ================= */
-
-function copyIP(ip, button){
-
-    navigator.clipboard.writeText(ip)
-        .then(() => {
-
-            const old = button.innerText;
-
-            button.innerText = "COPIED ✓";
-
-            showToast("SERVER IP COPIED ✓");
-
-            setTimeout(() => {
-
-                button.innerText = old;
-
-            }, 1800);
-
-        })
-        .catch(() => {
-
-            showToast("COPY FAILED");
-
-        });
-
-}
-
-
-/* ================= TOAST ================= */
-
-function showToast(text){
-
-    const toast =
-        document.getElementById("toast");
-
-    toast.innerText = text;
-
-    toast.classList.add("show");
-
-    setTimeout(() => {
-
-        toast.classList.remove("show");
-
-    }, 1800);
-
-}
-
-
-/* ================= MOUSE PARALLAX ================= */
-
-document.addEventListener("mousemove", e => {
-
-    const x =
-        (e.clientX / window.innerWidth - .5);
-
-    const y =
-        (e.clientY / window.innerHeight - .5);
-
-    const moon =
-        document.querySelector(".moon");
-
-    const mountains =
-        document.querySelectorAll(".mountains");
-
-    if(moon){
-
-        moon.style.transform =
-            `translate(${x * 15}px, ${y * 15}px)`;
-
+    if(nav){
+        nav.classList.toggle("open");
     }
 
-    mountains.forEach((mountain,index) => {
+}
 
-        const amount =
-            (index + 1) * 3;
 
-        mountain.style.transform =
-            `translate(${x * amount}px, ${y * amount}px)`;
+function copyText(text,button){
+
+    navigator.clipboard.writeText(text).then(()=>{
+
+        const old = button.innerText;
+
+        button.innerText = "COPIED ✓";
+
+        setTimeout(()=>{
+            button.innerText = old;
+        },1500);
+
+    });
+
+}
+
+
+/* close mobile menu */
+
+document.querySelectorAll("nav a").forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        const nav = document.getElementById("nav");
+
+        if(nav){
+            nav.classList.remove("open");
+        }
 
     });
 
 });
 
 
-/* ================= SCROLL REVEAL ================= */
+/* small desktop parallax */
 
-const reveal =
-    document.querySelectorAll(
-        ".mode-card, .connection-card, .rule, .features > div, .discord-box"
-    );
+if(window.innerWidth > 850){
 
-const observer =
-    new IntersectionObserver(
-        entries => {
+    document.addEventListener("mousemove",(e)=>{
 
-            entries.forEach(entry => {
+        const x =
+            (e.clientX / window.innerWidth - .5);
 
-                if(entry.isIntersecting){
+        const y =
+            (e.clientY / window.innerHeight - .5);
 
-                    entry.target.classList.add("visible");
+        document.documentElement.style.setProperty(
+            "--mx",
+            `${x * 10}px`
+        );
 
-                    observer.unobserve(entry.target);
+        document.documentElement.style.setProperty(
+            "--my",
+            `${y * 10}px`
+        );
 
-                }
-
-            });
-
-        },
-        {
-            threshold:.12
-        }
-    );
-
-
-reveal.forEach(element => {
-
-    element.style.opacity = "0";
-
-    element.style.transform =
-        "translateY(35px)";
-
-    element.style.transition =
-        "opacity .8s ease, transform .8s ease";
-
-    observer.observe(element);
-
-});
-
-
-/* ================= REVEAL CLASS ================= */
-
-const style =
-document.createElement("style");
-
-style.innerHTML = `
-
-.mode-card.visible,
-.connection-card.visible,
-.rule.visible,
-.features > div.visible,
-.discord-box.visible{
-
-    opacity:1 !important;
-
-    transform:translateY(0) !important;
+    });
 
 }
-
-`;
-
-document.head.appendChild(style);
