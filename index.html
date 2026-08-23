@@ -1,140 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>VØRKNYX MC ⚡ | Lifesteal Network</title>
+<title>VØRKNYX MC — Lifesteal Network</title>
 
-    <meta name="description"
-          content="VØRKNYX MC — Premium Minecraft Lifesteal Network. Lifesteal, Practice and Pillars of Fortune.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- LOADING SCREEN -->
+<!-- ================= LOADER ================= -->
 
-<div id="loader">
-    <div class="loader-logo">VØRKNYX<span>MC</span></div>
-    <div class="loader-line">
+<div class="loader" id="loader">
+    <div class="loader-logo">
+        ⚡ VØRKNYX <span>MC</span>
+    </div>
+
+    <div class="loader-bar">
         <div></div>
     </div>
-    <p>ENTERING THE NETWORK...</p>
+
+    <small>INITIALIZING NETWORK...</small>
 </div>
 
 
-<!-- BACKGROUND -->
+<!-- ================= CINEMATIC BACKGROUND ================= -->
 
-<div class="background"></div>
+<div class="scene">
 
-<div class="stars">
-    <i></i><i></i><i></i><i></i><i></i>
-    <i></i><i></i><i></i><i></i><i></i>
-    <i></i><i></i><i></i><i></i><i></i>
+    <div class="sky"></div>
+
+    <div class="moon">
+        <div class="moon-glow"></div>
+    </div>
+
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+
+    <div class="mountains back"></div>
+    <div class="mountains middle"></div>
+    <div class="mountains front"></div>
+
+    <div class="fog fog1"></div>
+    <div class="fog fog2"></div>
+
+    <div class="ground"></div>
+
 </div>
 
-<div class="grid"></div>
+
+<!-- PARTICLES -->
+
+<div class="particles">
+
+    <i></i><i></i><i></i><i></i><i></i>
+    <i></i><i></i><i></i><i></i><i></i>
+    <i></i><i></i><i></i><i></i><i></i>
+    <i></i><i></i><i></i><i></i><i></i>
+
+</div>
 
 
-<!-- NAVBAR -->
+<!-- ================= NAVBAR ================= -->
 
 <header class="navbar">
 
-    <a href="#home" class="brand">
-        <span class="brand-symbol">⚡</span>
-        <span>VØRKNYX</span>
-        <small>MC</small>
+    <a href="#home" class="logo">
+        <b>⚡</b>
+        VØRKNYX
+        <span>MC</span>
     </a>
 
-    <nav id="navMenu">
+    <nav id="nav">
+
         <a href="#home">HOME</a>
         <a href="#server">SERVER</a>
         <a href="#modes">MODES</a>
         <a href="#rules">RULES</a>
         <a href="#discord">DISCORD</a>
+
     </nav>
 
-    <a href="#server" class="nav-button">
-        PLAY NOW <span>↗</span>
+    <a href="#server" class="nav-play">
+        PLAY NOW <b>↗</b>
     </a>
 
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <button class="menu" onclick="menu()">☰</button>
 
 </header>
 
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
-<main id="home">
-
-<section class="hero">
+<section class="hero" id="home">
 
     <div class="hero-content">
 
-        <div class="network-badge">
-            <span class="pulse"></span>
-            VØRKNYX MC NETWORK
+        <div class="network">
+            <span></span>
+            OFFICIAL MINECRAFT NETWORK
         </div>
 
         <h1>
-            <span>VØRKNYX</span>
-            <strong>MC</strong>
+            VØRKNYX
+            <em>MC</em>
         </h1>
 
-        <div class="hero-subtitle">
-            <span></span>
+        <div class="hero-line">
+            <i></i>
             LIFESTEAL NETWORK
-            <span></span>
+            <i></i>
         </div>
 
-        <p class="hero-description">
-            Enter a new Minecraft experience where survival,
-            PvP and adventure collide. Build your legacy,
-            fight your enemies and become the ultimate survivor.
+        <p>
+            Enter a world where every heart matters.
+            Fight your enemies, build your kingdom and
+            create your own legend.
         </p>
 
         <div class="hero-buttons">
 
-            <a href="#server" class="main-button">
-                <span>⚔</span>
-                PLAY VØRKNYX
+            <a href="#server" class="primary-btn">
+                ⚔ PLAY NOW
             </a>
 
             <a href="https://discord.gg/DkYDvR8kQ"
                target="_blank"
-               class="discord-button">
-                <span>◈</span>
-                DISCORD
+               class="secondary-btn">
+                ◈ DISCORD
             </a>
 
         </div>
 
-        <div class="hero-stats">
+        <div class="stats">
 
             <div>
                 <strong>03</strong>
-                <span>GAME MODES</span>
+                <small>GAME MODES</small>
             </div>
 
-            <div class="stat-line"></div>
+            <span></span>
 
             <div>
                 <strong>24/7</strong>
-                <span>COMMUNITY</span>
+                <small>COMMUNITY</small>
             </div>
 
-            <div class="stat-line"></div>
+            <span></span>
 
             <div>
                 <strong>∞</strong>
-                <span>ADVENTURES</span>
+                <small>ADVENTURES</small>
             </div>
 
         </div>
@@ -142,20 +164,170 @@
     </div>
 
     <div class="scroll">
-        <span></span>
-        SCROLL TO EXPLORE
+        SCROLL
+        <b>↓</b>
     </div>
 
 </section>
 
 
-<!-- SERVER -->
+<!-- ================= MODES ================= -->
 
-<section id="server" class="section">
+<section class="modes-section" id="modes">
 
-    <div class="section-heading">
+    <div class="section-title">
 
-        <div class="mini-title">SERVER CONNECTION</div>
+        <small>EXPLORE THE NETWORK</small>
+
+        <h2>
+            CHOOSE YOUR
+            <span>REALM</span>
+        </h2>
+
+        <p>
+            Three unique experiences. One legendary network.
+        </p>
+
+    </div>
+
+
+    <div class="mode-showcase">
+
+
+        <!-- LIFESTEAL -->
+
+        <article class="mode-card lifesteal">
+
+            <div class="card-bg"></div>
+
+            <div class="card-number">01</div>
+
+            <div class="card-top">
+                <span>VØRKNYX NETWORK</span>
+                <b>ONLINE</b>
+            </div>
+
+            <div class="mode-symbol">
+                ❤
+            </div>
+
+            <div class="mode-info">
+
+                <small>LIFESTEAL</small>
+
+                <h3>
+                    STEAL THEIR
+                    <strong>HEART.</strong>
+                </h3>
+
+                <p>
+                    Fight. Survive. Conquer.
+                    Every battle could change your destiny.
+                </p>
+
+                <a href="#server">
+                    ENTER REALM
+                    <b>→</b>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRACTICE -->
+
+        <article class="mode-card practice">
+
+            <div class="card-bg"></div>
+
+            <div class="card-number">02</div>
+
+            <div class="card-top">
+                <span>VØRKNYX NETWORK</span>
+                <b>ONLINE</b>
+            </div>
+
+            <div class="mode-symbol">
+                ⚔
+            </div>
+
+            <div class="mode-info">
+
+                <small>PRACTICE</small>
+
+                <h3>
+                    MASTER THE
+                    <strong>FIGHT.</strong>
+                </h3>
+
+                <p>
+                    Train your aim, improve your PvP
+                    and become a true warrior.
+                </p>
+
+                <a href="#server">
+                    ENTER REALM
+                    <b>→</b>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- PILLARS -->
+
+        <article class="mode-card pillars">
+
+            <div class="card-bg"></div>
+
+            <div class="card-number">03</div>
+
+            <div class="card-top">
+                <span>VØRKNYX NETWORK</span>
+                <b>ONLINE</b>
+            </div>
+
+            <div class="mode-symbol">
+                🏹
+            </div>
+
+            <div class="mode-info">
+
+                <small>PILLARS OF FORTUNE</small>
+
+                <h3>
+                    ONLY THE
+                    <strong>BEST SURVIVE.</strong>
+                </h3>
+
+                <p>
+                    Climb higher, fight harder and
+                    let fortune decide your fate.
+                </p>
+
+                <a href="#server">
+                    ENTER REALM
+                    <b>→</b>
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVER ================= -->
+
+<section class="server-section" id="server">
+
+    <div class="section-title">
+
+        <small>CONNECTION</small>
 
         <h2>
             JOIN THE
@@ -163,39 +335,43 @@
         </h2>
 
         <p>
-            Choose your edition and enter the world of VØRKNYX MC.
+            Use the official server information below.
         </p>
 
     </div>
 
 
-    <div class="server-grid">
+    <div class="connection">
 
         <!-- JAVA -->
 
         <div class="connection-card">
 
-            <div class="card-glow"></div>
-
-            <div class="edition-icon">☕</div>
-
-            <div class="edition-tag">JAVA EDITION</div>
-
-            <h3>Java Network</h3>
-
-            <p>Recommended for PC players</p>
-
-            <div class="ip-box">
-                <span>SERVER IP</span>
-
-                <strong>node-2.lightingmc.net</strong>
-
-                <button onclick="copyIP('node-2.lightingmc.net', this)">
-                    COPY
-                </button>
+            <div class="edition">
+                ☕ JAVA EDITION
             </div>
 
-            <div class="status">
+            <h3>PC NETWORK</h3>
+
+            <p>
+                Recommended for Minecraft Java players.
+            </p>
+
+            <div class="ip">
+
+                <small>SERVER IP</small>
+
+                <strong>
+                    node-2.lightingmc.net
+                </strong>
+
+                <button onclick="copyIP('node-2.lightingmc.net',this)">
+                    COPY
+                </button>
+
+            </div>
+
+            <div class="online">
                 <i></i>
                 SERVER ONLINE
             </div>
@@ -207,32 +383,36 @@
 
         <div class="connection-card">
 
-            <div class="card-glow"></div>
-
-            <div class="edition-icon">📱</div>
-
-            <div class="edition-tag">BEDROCK EDITION</div>
-
-            <h3>Bedrock Network</h3>
-
-            <p>Play from your mobile or console</p>
-
-            <div class="ip-box">
-                <span>SERVER IP</span>
-
-                <strong>node-2.lightingmc.net</strong>
-
-                <button onclick="copyIP('node-2.lightingmc.net', this)">
-                    COPY
-                </button>
+            <div class="edition">
+                📱 BEDROCK EDITION
             </div>
 
-            <div class="port-box">
-                <span>PORT</span>
+            <h3>MOBILE NETWORK</h3>
+
+            <p>
+                Play from mobile and compatible devices.
+            </p>
+
+            <div class="ip">
+
+                <small>SERVER IP</small>
+
+                <strong>
+                    node-2.lightingmc.net
+                </strong>
+
+                <button onclick="copyIP('node-2.lightingmc.net',this)">
+                    COPY
+                </button>
+
+            </div>
+
+            <div class="port">
+                <small>PORT</small>
                 <strong>25568</strong>
             </div>
 
-            <div class="status">
+            <div class="online">
                 <i></i>
                 SERVER ONLINE
             </div>
@@ -244,154 +424,46 @@
 </section>
 
 
-<!-- MODES -->
+<!-- ================= ABOUT ================= -->
 
-<section id="modes" class="section modes-section">
+<section class="about">
 
-    <div class="section-heading">
+    <div class="about-art">
 
-        <div class="mini-title">CHOOSE YOUR BATTLE</div>
+        <div class="ring r1"></div>
+        <div class="ring r2"></div>
 
-        <h2>
-            EXPLORE OUR
-            <span>MODES</span>
-        </h2>
-
-        <p>
-            Every mode has its own challenge. Which one will you conquer?
-        </p>
-
-    </div>
-
-
-    <div class="modes-grid">
-
-        <article class="mode-card lifesteal">
-
-            <div class="mode-number">01</div>
-
-            <div class="mode-icon-big">❤️</div>
-
-            <div class="mode-content">
-
-                <span>LIFΕSTEAL</span>
-
-                <h3>STEAL. FIGHT. SURVIVE.</h3>
-
-                <p>
-                    Fight players, gain hearts and protect your life.
-                    Build your empire and dominate the server.
-                </p>
-
-                <a href="#server">
-                    PLAY MODE →
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <article class="mode-card practice">
-
-            <div class="mode-number">02</div>
-
-            <div class="mode-icon-big">⚔️</div>
-
-            <div class="mode-content">
-
-                <span>PRACTICE</span>
-
-                <h3>MASTER YOUR SKILLS.</h3>
-
-                <p>
-                    Sharpen your PvP skills and prepare yourself
-                    for the toughest fights.
-                </p>
-
-                <a href="#server">
-                    PLAY MODE →
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <article class="mode-card pillars">
-
-            <div class="mode-number">03</div>
-
-            <div class="mode-icon-big">🏹</div>
-
-            <div class="mode-content">
-
-                <span>PILLARS OF FORTUNE</span>
-
-                <h3>ONLY THE BEST SURVIVE.</h3>
-
-                <p>
-                    Climb, battle and survive while fortune decides
-                    your next move.
-                </p>
-
-                <a href="#server">
-                    PLAY MODE →
-                </a>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- ABOUT -->
-
-<section class="about-section section">
-
-    <div class="about-visual">
-
-        <div class="cube cube-one">⚔</div>
-        <div class="cube cube-two">♦</div>
-        <div class="cube cube-three">✦</div>
-
-        <div class="about-ring"></div>
-
-        <div class="about-logo">
-            <span>VØRK</span>
-            <strong>NYX</strong>
-            <small>MC NETWORK</small>
+        <div class="core">
+            ⚡
+            <small>VØRKNYX</small>
         </div>
 
     </div>
 
 
-    <div class="about-content">
+    <div class="about-text">
 
-        <div class="mini-title">WELCOME ADVENTURER</div>
+        <small>THE NETWORK</small>
 
         <h2>
-            MORE THAN A
-            <span>SERVER.</span>
+            BUILT FOR
+            <span>ADVENTURERS.</span>
         </h2>
 
         <p>
-            Welcome to Vorknyx MC — a friendly Minecraft Server
-            and Discord Community built for players who want
-            survival, PvP, events, giveaways and an active
+            Welcome to Vorknyx MC — a friendly Minecraft
+            Server and Discord Community where players can
+            enjoy survival, events, giveaways and an active
             community.
         </p>
 
-        <div class="feature-list">
+        <div class="features">
 
             <div>
                 <b>01</b>
                 <span>
                     <strong>Survival Gameplay</strong>
-                    Build, fight and survive.
+                    Build your legacy.
                 </span>
             </div>
 
@@ -399,7 +471,7 @@
                 <b>02</b>
                 <span>
                     <strong>Active Community</strong>
-                    Meet players and make friends.
+                    Meet new players.
                 </span>
             </div>
 
@@ -407,7 +479,7 @@
                 <b>03</b>
                 <span>
                     <strong>Events & Giveaways</strong>
-                    Something is always happening.
+                    Always something happening.
                 </span>
             </div>
 
@@ -415,7 +487,7 @@
                 <b>04</b>
                 <span>
                     <strong>Server Support</strong>
-                    We are here when you need us.
+                    We're here to help.
                 </span>
             </div>
 
@@ -426,38 +498,38 @@
 </section>
 
 
-<!-- RULES -->
+<!-- ================= RULES ================= -->
 
-<section id="rules" class="section rules-section">
+<section class="rules-section" id="rules">
 
-    <div class="section-heading">
+    <div class="section-title">
 
-        <div class="mini-title">NETWORK GUIDELINES</div>
+        <small>PLAY FAIR</small>
 
         <h2>
-            SERVER
+            NETWORK
             <span>RULES</span>
         </h2>
 
         <p>
-            Play fair. Stay respectful. Have fun.
+            Respect everyone and keep the community enjoyable.
         </p>
 
     </div>
 
 
-    <div class="rules-container">
+    <div class="rules">
 
         <div class="rule">
-            <span>01</span>
+            <b>01</b>
             <div>
-                <h3>🛡️ Respect Everyone</h3>
+                <h3>🛡 Respect Everyone</h3>
                 <p>Be respectful to all members.</p>
             </div>
         </div>
 
         <div class="rule">
-            <span>02</span>
+            <b>02</b>
             <div>
                 <h3>📨 No Spamming</h3>
                 <p>No message, ping or VC spam.</p>
@@ -465,7 +537,7 @@
         </div>
 
         <div class="rule">
-            <span>03</span>
+            <b>03</b>
             <div>
                 <h3>🌿 Keep It Clean</h3>
                 <p>No NSFW or inappropriate content.</p>
@@ -473,7 +545,7 @@
         </div>
 
         <div class="rule">
-            <span>04</span>
+            <b>04</b>
             <div>
                 <h3>🚩 No Advertising</h3>
                 <p>No self-promotion or invites.</p>
@@ -481,15 +553,15 @@
         </div>
 
         <div class="rule">
-            <span>05</span>
+            <b>05</b>
             <div>
-                <h3>⚒️ Fair Play Only</h3>
+                <h3>⚒ Fair Play Only</h3>
                 <p>No hacks, cheats, X-Ray or exploits.</p>
             </div>
         </div>
 
         <div class="rule">
-            <span>06</span>
+            <b>06</b>
             <div>
                 <h3>👮 Respect Staff</h3>
                 <p>Follow staff instructions.</p>
@@ -499,25 +571,23 @@
     </div>
 
 
-    <div class="punishments">
+    <div class="punishment">
 
-        <div>
-            <span>⚠️</span>
-            <h3>PUNISHMENT SYSTEM</h3>
-        </div>
+        <small>⚠ PUNISHMENT SYSTEM</small>
 
-        <strong>
+        <h3>
             WARN
-            <i>→</i>
+            <span>→</span>
             MUTE
-            <i>→</i>
+            <span>→</span>
             KICK
-            <i>→</i>
+            <span>→</span>
             BAN
-        </strong>
+        </h3>
 
         <p>
-            ☠️ Cheating & Exploiting = <b>INSTANT BAN</b>
+            ☠ Cheating & Exploiting =
+            <strong>INSTANT BAN</strong>
         </p>
 
     </div>
@@ -525,36 +595,34 @@
 </section>
 
 
-<!-- DISCORD -->
+<!-- ================= DISCORD ================= -->
 
-<section id="discord" class="discord-section">
+<section class="discord-section" id="discord">
 
     <div class="discord-box">
 
-        <div class="discord-decoration">◈</div>
+        <div class="discord-bg"></div>
 
         <div class="discord-content">
 
-            <div class="mini-title">JOIN THE COMMUNITY</div>
+            <small>THE COMMUNITY</small>
 
             <h2>
-                VØRKNYX
+                JOIN OUR
                 <span>DISCORD</span>
             </h2>
 
             <p>
-                Stay connected with the Vorknyx community.
-                Get updates, join events, participate in giveaways,
-                chat with players and receive server support.
+                Get server updates, participate in events,
+                join giveaways, chat with players and
+                stay connected with VØRKNYX MC.
             </p>
 
             <a href="https://discord.gg/DkYDvR8kQ"
                target="_blank"
-               class="discord-big-button">
+               class="discord-btn">
 
-                <span>◈</span>
-
-                JOIN DISCORD
+                ◈ JOIN DISCORD
 
                 <b>↗</b>
 
@@ -567,56 +635,58 @@
 </section>
 
 
-<!-- FINAL CTA -->
+<!-- ================= FINAL ================= -->
 
-<section class="final-section">
+<section class="final">
 
-    <div class="final-content">
+    <small>YOUR LEGEND STARTS HERE</small>
 
-        <div>⚔️</div>
+    <h2>
+        ENTER THE
+        <span>VØRKNYX</span>
+        WORLD.
+    </h2>
 
-        <h2>YOUR ADVENTURE<br>STARTS <span>NOW.</span></h2>
+    <p>
+        Play fair • Stay respectful • Have fun
+    </p>
 
-        <p>
-            Play fair • Stay respectful • Have fun
-        </p>
-
-        <a href="#server" class="main-button">
-            JOIN VØRKNYX MC
-        </a>
-
-    </div>
+    <a href="#server" class="primary-btn">
+        ⚔ JOIN SERVER
+    </a>
 
 </section>
 
-</main>
 
-
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
     <div class="footer-logo">
-        ⚡ VØRKNYX MC ⚔️
+        ⚡ VØRKNYX MC ⚔
     </div>
 
     <p>
-        Lifesteal • Practice • Pillars of Fortune
+        LIFESTEAL • PRACTICE • PILLARS OF FORTUNE
     </p>
 
     <div class="footer-links">
-        <a href="#home">Home</a>
-        <a href="#server">Server</a>
-        <a href="#modes">Modes</a>
-        <a href="#rules">Rules</a>
-        <a href="https://discord.gg/DkYDvR8kQ" target="_blank">
-            Discord
+
+        <a href="#home">HOME</a>
+        <a href="#server">SERVER</a>
+        <a href="#modes">MODES</a>
+        <a href="#rules">RULES</a>
+
+        <a href="https://discord.gg/DkYDvR8kQ"
+           target="_blank">
+            DISCORD
         </a>
+
     </div>
 
-    <div class="copyright">
-        © 2026 VØRKNYX MC. All rights reserved.
-    </div>
+    <small>
+        © 2026 VØRKNYX MC — ALL RIGHTS RESERVED.
+    </small>
 
 </footer>
 
