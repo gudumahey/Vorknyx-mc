@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>⚡ VØRKNYX MC ⚔️ | Lifesteal Network</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Poppins,sans-serif;
+    background:#05030b;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ================= BACKGROUND ================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-3;
+    background:
+      radial-gradient(circle at 20% 20%,rgba(130,40,255,.25),transparent 30%),
+      radial-gradient(circle at 80% 70%,rgba(0,180,255,.18),transparent 30%),
+      linear-gradient(135deg,#05030b,#0b0718,#030712);
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    opacity:.18;
+    background-image:
+      linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);
+    background-size:45px 45px;
+    animation:gridMove 12s linear infinite;
+}
+
+@keyframes gridMove{
+    from{background-position:0 0;}
+    to{background-position:45px 45px;}
+}
+
+/* PARTICLES */
+
+.particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+}
+
+.particle{
+    position:absolute;
+    width:4px;
+    height:4px;
+    background:#a855f7;
+    border-radius:50%;
+    box-shadow:0 0 12px #a855f7;
+    animation:float 7s infinite ease-in-out;
+}
+
+.p1{left:8%;top:20%;animation-delay:0s}
+.p2{left:22%;top:75%;animation-delay:2s}
+.p3{left:42%;top:30%;animation-delay:1s}
+.p4{left:60%;top:80%;animation-delay:3s}
+.p5{left:78%;top:25%;animation-delay:1.5s}
+.p6{left:92%;top:65%;animation-delay:4s}
+.p7{left:35%;top:55%;animation-delay:2.5s}
+.p8{left:70%;top:50%;animation-delay:3.5s}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);opacity:.2}
+    50%{transform:translateY(-80px);opacity:1}
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+    background:rgba(5,3,11,.65);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(168,85,247,.2);
+}
+
+.logo{
+    font-family:Orbitron,sans-serif;
+    font-weight:900;
+    font-size:22px;
+    color:#fff;
+    text-shadow:0 0 15px #9b4dff;
+}
+
+.logo span{
+    color:#a855f7;
+}
+
+nav a{
+    color:#ddd;
+    text-decoration:none;
+    margin-left:25px;
+    font-weight:600;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#b66cff;
+    text-shadow:0 0 10px #a855f7;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 20px 70px;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.badge{
+    display:inline-block;
+    padding:9px 18px;
+    border:1px solid rgba(168,85,247,.6);
+    background:rgba(168,85,247,.1);
+    border-radius:30px;
+    color:#d8b4fe;
+    margin-bottom:25px;
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    50%{box-shadow:0 0 25px rgba(168,85,247,.35)}
+}
+
+.hero h1{
+    font-family:Orbitron,sans-serif;
+    font-size:clamp(45px,9vw,90px);
+    font-weight:900;
+    letter-spacing:3px;
+    background:linear-gradient(90deg,#fff,#c084fc,#7dd3fc,#fff);
+    background-size:300%;
+    -webkit-background-clip:text;
+    color:transparent;
+    animation:gradient 5s infinite linear;
+}
+
+@keyframes gradient{
+    0%{background-position:0%}
+    100%{background-position:300%}
+}
+
+.hero h2{
+    margin-top:12px;
+    color:#c084fc;
+    font-size:clamp(18px,3vw,28px);
+}
+
+.hero p{
+    max-width:700px;
+    margin:20px auto;
+    color:#b9b9c5;
+    line-height:1.8;
+}
+
+.buttons{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 25px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:700;
+    transition:.3s;
+}
+
+.primary{
+    background:linear-gradient(135deg,#9333ea,#6d28d9);
+    color:white;
+    box-shadow:0 0 25px rgba(147,51,234,.35);
+}
+
+.secondary{
+    border:1px solid #7c3aed;
+    color:#d8b4fe;
+    background:rgba(124,58,237,.08);
+}
+
+.btn:hover{
+    transform:translateY(-4px) scale(1.03);
+}
+
+/* ================= SECTIONS ================= */
+
+section{
+    padding:90px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-family:Orbitron,sans-serif;
+    font-size:35px;
+}
+
+.section-title p{
+    color:#999;
+    margin-top:10px;
+}
+
+/* ================= IP CARDS ================= */
+
+.ip-grid{
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(168,85,247,.25);
+    border-radius:18px;
+    padding:30px;
+    backdrop-filter:blur(15px);
+    box-shadow:0 10px 40px rgba(0,0,0,.3);
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#a855f7;
+    box-shadow:0 0 35px rgba(168,85,247,.18);
+}
+
+.card h3{
+    font-size:22px;
+    margin-bottom:15px;
+}
+
+.ip{
+    background:#05030b;
+    border:1px solid #31204b;
+    padding:14px;
+    border-radius:10px;
+    font-family:monospace;
+    color:#c084fc;
+    word-break:break-all;
+    margin:10px 0;
+}
+
+.copy{
+    width:100%;
+    border:0;
+    padding:12px;
+    border-radius:8px;
+    background:#7c3aed;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.copy:hover{
+    background:#9333ea;
+}
+
+/* ================= MODES ================= */
+
+.modes{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.mode{
+    text-align:center;
+    padding:35px 20px;
+    background:linear-gradient(145deg,rgba(255,255,255,.05),rgba(124,58,237,.08));
+    border-radius:18px;
+    border:1px solid rgba(168,85,247,.2);
+    transition:.3s;
+}
+
+.mode:hover{
+    transform:translateY(-7px);
+}
+
+.mode-icon{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.mode h3{
+    font-family:Orbitron,sans-serif;
+    color:#d8b4fe;
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+}
+
+.about p{
+    color:#aaa;
+    line-height:2;
+    font-size:16px;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+    margin-top:35px;
+}
+
+.feature{
+    padding:20px;
+    border-radius:14px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+}
+
+/* ================= RULES ================= */
+
+.rules{
+    max-width:950px;
+    margin:auto;
+}
+
+.rule{
+    margin-bottom:15px;
+    padding:20px;
+    border-left:3px solid #a855f7;
+    background:rgba(255,255,255,.035);
+    border-radius:0 12px 12px 0;
+}
+
+.rule strong{
+    color:#d8b4fe;
+}
+
+.rule p{
+    color:#999;
+    margin-top:6px;
+}
+
+.punishment{
+    margin-top:30px;
+    text-align:center;
+    padding:25px;
+    border:1px solid rgba(239,68,68,.35);
+    background:rgba(239,68,68,.05);
+    border-radius:15px;
+}
+
+/* ================= DISCORD ================= */
+
+.discord{
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+    padding:50px 30px;
+    border-radius:25px;
+    background:linear-gradient(135deg,rgba(88,101,242,.15),rgba(168,85,247,.1));
+    border:1px solid rgba(139,92,246,.3);
+}
+
+.discord h2{
+    font-family:Orbitron,sans-serif;
+    font-size:35px;
+}
+
+.discord p{
+    color:#aaa;
+    margin:15px auto 25px;
+    max-width:650px;
+    line-height:1.8;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    text-align:center;
+    padding:35px 20px;
+    border-top:1px solid rgba(255,255,255,.08);
+    color:#777;
+}
+
+footer strong{
+    color:#c084fc;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:700px){
+    nav{
+        padding:15px 5%;
+    }
+
+    nav .links{
+        display:none;
+    }
+
+    section{
+        padding:70px 5%;
+    }
+
+    .hero{
+        padding-top:110px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="particles">
+    <span class="particle p1"></span>
+    <span class="particle p2"></span>
+    <span class="particle p3"></span>
+    <span class="particle p4"></span>
+    <span class="particle p5"></span>
+    <span class="particle p6"></span>
+    <span class="particle p7"></span>
+    <span class="particle p8"></span>
+</div>
+
+<!-- NAVBAR -->
+
+<nav>
+    <div class="logo">⚡ VØRKNYX <span>MC</span> ⚔️</div>
+
+    <div class="links">
+        <a href="#home">Home</a>
+        <a href="#server">Server</a>
+        <a href="#modes">Modes</a>
+        <a href="#rules">Rules</a>
+        <a href="#discord">Discord</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="badge">⚡ OFFICIAL MINECRAFT NETWORK</div>
+
+        <h1>VØRKNYX MC</h1>
+
+        <h2>⚔️ LIFΕSTEAL NETWORK ⚔️</h2>
+
+        <p>
+            Welcome to Vorknyx MC — a friendly Minecraft Server
+            and Discord Community where players can enjoy survival,
+            events, giveaways and an active community.
+        </p>
+
+        <div class="buttons">
+            <a class="btn primary" href="#server">🎮 JOIN SERVER</a>
+
+            <a class="btn secondary"
+               href="https://discord.gg/DkYDvR8kQ"
+               target="_blank">
+                💜 JOIN DISCORD
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SERVER IP -->
+
+<section id="server">
+
+    <div class="section-title">
+        <h2>⚔️ SERVER CONNECTION</h2>
+        <p>Join using these IPs only!</p>
+    </div>
+
+    <div class="ip-grid">
+
+        <div class="card">
+
+            <h3>☕ Java Edition</h3>
+
+            <p style="color:#999;">Server IP</p>
+
+            <div class="ip" id="javaIP">
+                node-2.lightingmc.net
+            </div>
+
+            <button class="copy"
+                    onclick="copyText('node-2.lightingmc.net',this)">
+                📋 COPY IP
+            </button>
+
+        </div>
+
+        <div class="card">
+
+            <h3>📱 Bedrock Edition</h3>
+
+            <p style="color:#999;">Server IP</p>
+
+            <div class="ip">
+                node-2.lightingmc.net
+            </div>
+
+            <p style="color:#999;">Port</p>
+
+            <div class="ip">
+                25568
+            </div>
+
+            <button class="copy"
+                    onclick="copyText('node-2.lightingmc.net',this)">
+                📋 COPY IP
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MODES -->
+
+<section id="modes">
+
+    <div class="section-title">
+        <h2>🎮 GAME MODES</h2>
+        <p>Choose your adventure.</p>
+    </div>
+
+    <div class="modes">
+
+        <div class="mode">
+            <div class="mode-icon">❤️</div>
+            <h3>LIFESTEAL</h3>
+            <p>Fight, survive and steal hearts.</p>
+        </div>
+
+        <div class="mode">
+            <div class="mode-icon">🎯</div>
+            <h3>PRACTICE</h3>
+            <p>Improve your PvP skills.</p>
+        </div>
+
+        <div class="mode">
+            <div class="mode-icon">🏹</div>
+            <h3>PILLARS OF FORTUNE</h3>
+            <p>Climb, battle and survive.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section>
+
+    <div class="section-title">
+        <h2>✨ WELCOME ADVENTURER!</h2>
+    </div>
+
+    <div class="about">
+
+        <p>
+            Welcome to <strong>Vorknyx MC</strong> — a friendly
+            Minecraft Server and Discord Community where players
+            can enjoy survival, events, giveaways and an active
+            community.
+        </p>
+
+        <div class="features">
+
+            <div class="feature">
+                🎮<br><br>
+                <strong>Minecraft Survival Gameplay</strong>
+            </div>
+
+            <div class="feature">
+                🤝<br><br>
+                <strong>Friendly & Active Community</strong>
+            </div>
+
+            <div class="feature">
+                🎁<br><br>
+                <strong>Events & Giveaways</strong>
+            </div>
+
+            <div class="feature">
+                🛠️<br><br>
+                <strong>Server Support & Updates</strong>
+            </div>
+
+            <div class="feature">
+                🎙️<br><br>
+                <strong>Fun Chats & Voice Channels</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- RULES -->
+
+<section id="rules">
+
+    <div class="section-title">
+        <h2>📜 SERVER RULES</h2>
+        <p>Play fair. Stay respectful. Have fun.</p>
+    </div>
+
+    <div class="rules">
+
+        <div class="rule">
+            <strong>🛡️ Respect Everyone</strong>
+            <p>Be respectful to all members.</p>
+        </div>
+
+        <div class="rule">
+            <strong>📨 No Spamming</strong>
+            <p>No message, ping, or VC spam.</p>
+        </div>
+
+        <div class="rule">
+            <strong>🌿 Keep It Clean</strong>
+            <p>No NSFW or inappropriate content.</p>
+        </div>
+
+        <div class="rule">
+            <strong>🚩 No Advertising</strong>
+            <p>No self-promotion or invites.</p>
+        </div>
+
+        <div class="rule">
+            <strong>⚒️ Fair Play Only</strong>
+            <p>No hacks, cheats, X-Ray or exploits.</p>
+        </div>
+
+        <div class="rule">
+            <strong>👮 Respect Staff</strong>
+            <p>Follow staff instructions.</p>
+        </div>
+
+        <div class="punishment">
+
+            <h3>⚠️ PUNISHMENTS</h3>
+
+            <p style="margin-top:12px;">
+                📍 WARN ➜ 🔇 MUTE ➜ 🥾 KICK ➜ 🔨 BAN
+            </p>
+
+            <p style="margin-top:12px;">
+                ☠️ <strong>Cheating & Exploiting = Instant Ban</strong>
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- DISCORD -->
+
+<section id="discord">
+
+    <div class="discord">
+
+        <h2>💜 JOIN OUR DISCORD</h2>
+
+        <p>
+            Join the Vorknyx MC Discord community for server
+            updates, events, giveaways, support, chats and
+            voice channels.
+        </p>
+
+        <a class="btn primary"
+           href="https://discord.gg/DkYDvR8kQ"
+           target="_blank">
+            💜 JOIN DISCORD
+        </a>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        ⚔️ <strong>VØRKNYX MC</strong> ⚔️
+    </p>
+
+    <p style="margin-top:8px;">
+        Play Fair • Stay Respectful • Have Fun
+    </p>
+
+    <p style="margin-top:15px;">
+        © 2026 VØRKNYX MC. All Rights Reserved.
+    </p>
+
+</footer>
+
+<script>
+
+function copyText(text,button){
+
+    navigator.clipboard.writeText(text);
+
+    const oldText = button.innerText;
+
+    button.innerText = "✅ COPIED!";
+
+    setTimeout(function(){
+        button.innerText = oldText;
+    },1500);
+}
+
+</script>
+
+</body>
+</html>
+
