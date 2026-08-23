@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08070a">
 <title>VØRKNYX MC — Server</title>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -11,33 +12,65 @@
 
 <div class="server-bg"></div>
 
-<header>
-    <a class="brand" href="index.html">⚡ VØRKNYX <span>MC</span></a>
+<header class="site-header">
+
+    <a class="brand" href="index.html">
+        ⚡ VØRKNYX <b>MC</b>
+    </a>
 
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-    <nav id="nav">
-        <a href="index.html">HOME</a>
-        <a class="active" href="server.html">SERVER</a>
-        <a href="modes.html">GAME MODES</a>
-        <a href="rules.html">RULES</a>
-        <a href="discord.html">DISCORD</a>
+    <nav id="nav" class="main-nav">
+
+        <a href="index.html">
+            <span>⌂</span> HOME
+        </a>
+
+        <a class="active" href="server.html">
+            <span>⚔</span> SERVER
+        </a>
+
+        <a href="modes.html">
+            <span>◆</span> GAME MODES
+        </a>
+
+        <a href="rules.html">
+            <span>📜</span> RULES
+        </a>
+
+        <a href="discord.html" class="discord-nav">
+            <span>◈</span> DISCORD
+        </a>
+
     </nav>
+
 </header>
 
 <main class="page">
 
     <div class="page-heading">
+
         <small>THE GATEWAY</small>
-        <h1>JOIN THE <span>NETWORK</span></h1>
-        <p>Choose your edition and enter VØRKNYX MC.</p>
+
+        <h1>
+            JOIN THE <span>NETWORK</span>
+        </h1>
+
+        <p>
+            Choose your edition and enter VØRKNYX MC.
+        </p>
+
     </div>
+
 
     <section class="connection-grid">
 
+
         <div class="connection-card java">
 
-            <div class="edition-icon">☕</div>
+            <div class="edition-icon">
+                ☕
+            </div>
 
             <small>JAVA EDITION</small>
 
@@ -48,27 +81,33 @@
             </p>
 
             <div class="ip-box">
+
                 <label>SERVER IP</label>
 
-                <strong id="javaIP">
+                <strong>
                     node-2.lightingmc.net
                 </strong>
 
                 <button onclick="copyText('node-2.lightingmc.net',this)">
                     COPY
                 </button>
+
             </div>
 
             <div class="status">
-                <i></i> SERVER ONLINE
+                <i></i>
+                SERVER ONLINE
             </div>
 
         </div>
 
 
+
         <div class="connection-card bedrock">
 
-            <div class="edition-icon">📱</div>
+            <div class="edition-icon">
+                📱
+            </div>
 
             <small>BEDROCK EDITION</small>
 
@@ -93,12 +132,16 @@
             </div>
 
             <div class="port-box">
+
                 <label>PORT</label>
+
                 <strong>25568</strong>
+
             </div>
 
             <div class="status">
-                <i></i> SERVER ONLINE
+                <i></i>
+                SERVER ONLINE
             </div>
 
         </div>
@@ -109,21 +152,41 @@
     <section class="join-info">
 
         <div>
+
             <span>01</span>
+
             <h3>OPEN MINECRAFT</h3>
-            <p>Launch your Minecraft edition.</p>
+
+            <p>
+                Launch your Minecraft edition.
+            </p>
+
         </div>
 
+
         <div>
+
             <span>02</span>
+
             <h3>ADD SERVER</h3>
-            <p>Use the official IP shown above.</p>
+
+            <p>
+                Use the official IP shown above.
+            </p>
+
         </div>
 
+
         <div>
+
             <span>03</span>
+
             <h3>START PLAYING</h3>
-            <p>Enter VØRKNYX and begin your adventure.</p>
+
+            <p>
+                Enter VØRKNYX and begin your adventure.
+            </p>
+
         </div>
 
     </section>
@@ -131,5 +194,6 @@
 </main>
 
 <script src="script.js"></script>
+
 </body>
 </html>
