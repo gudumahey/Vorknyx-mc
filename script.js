@@ -1,35 +1,37 @@
 /* ================= LOADER ================= */
 
-window.addEventListener("load", function(){
+window.addEventListener("load", () => {
 
-    setTimeout(function(){
+    setTimeout(() => {
 
-        document.getElementById("loader")
+        document
+            .getElementById("loader")
             .classList.add("hide");
 
-    }, 1900);
+    }, 2100);
 
 });
 
 
 /* ================= MOBILE MENU ================= */
 
-function toggleMenu(){
+function menu(){
 
-    const menu = document.getElementById("navMenu");
-
-    menu.classList.toggle("active");
+    document
+        .getElementById("nav")
+        .classList.toggle("active");
 
 }
 
 
-/* Close menu after clicking link */
+/* CLOSE MOBILE MENU */
 
-document.querySelectorAll("#navMenu a").forEach(function(link){
+document.querySelectorAll("#nav a").forEach(link => {
 
-    link.addEventListener("click", function(){
+    link.addEventListener("click", () => {
 
-        document.getElementById("navMenu")
+        document
+            .getElementById("nav")
             .classList.remove("active");
 
     });
@@ -41,125 +43,151 @@ document.querySelectorAll("#navMenu a").forEach(function(link){
 
 function copyIP(ip, button){
 
-    navigator.clipboard.writeText(ip).then(function(){
+    navigator.clipboard.writeText(ip)
+        .then(() => {
 
-        const oldText = button.innerText;
+            const old = button.innerText;
 
-        button.innerText = "COPIED ✓";
+            button.innerText = "COPIED ✓";
 
-        button.style.background = "#7c3aed";
-        button.style.color = "#fff";
+            showToast("SERVER IP COPIED ✓");
 
-        showToast("SERVER IP COPIED ✓");
+            setTimeout(() => {
 
-        setTimeout(function(){
+                button.innerText = old;
 
-            button.innerText = oldText;
-            button.style.background = "";
-            button.style.color = "";
+            }, 1800);
 
-        },1800);
+        })
+        .catch(() => {
 
-    }).catch(function(){
+            showToast("COPY FAILED");
 
-        showToast("COPY FAILED");
-
-    });
+        });
 
 }
 
 
 /* ================= TOAST ================= */
 
-function showToast(message){
+function showToast(text){
 
-    const toast = document.getElementById("toast");
+    const toast =
+        document.getElementById("toast");
 
-    toast.innerText = message;
+    toast.innerText = text;
 
     toast.classList.add("show");
 
-    setTimeout(function(){
+    setTimeout(() => {
 
         toast.classList.remove("show");
 
-    },1800);
+    }, 1800);
 
 }
 
 
-/* ================= SCROLL REVEAL ================= */
+/* ================= MOUSE PARALLAX ================= */
 
-const revealElements = document.querySelectorAll(
-    ".connection-card, .mode-card, .rule, .feature-list div, .about-content, .discord-box"
-);
+document.addEventListener("mousemove", e => {
 
-const revealObserver = new IntersectionObserver(
+    const x =
+        (e.clientX / window.innerWidth - .5);
 
-    function(entries){
+    const y =
+        (e.clientY / window.innerHeight - .5);
 
-        entries.forEach(function(entry){
+    const moon =
+        document.querySelector(".moon");
 
-            if(entry.isIntersecting){
+    const mountains =
+        document.querySelectorAll(".mountains");
 
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
+    if(moon){
 
-                revealObserver.unobserve(entry.target);
+        moon.style.transform =
+            `translate(${x * 15}px, ${y * 15}px)`;
 
-            }
-
-        });
-
-    },
-
-    {
-        threshold:0.12
     }
 
-);
+    mountains.forEach((mountain,index) => {
+
+        const amount =
+            (index + 1) * 3;
+
+        mountain.style.transform =
+            `translate(${x * amount}px, ${y * amount}px)`;
+
+    });
+
+});
 
 
-revealElements.forEach(function(element){
+/* ================= SCROLL REVEAL ================= */
+
+const reveal =
+    document.querySelectorAll(
+        ".mode-card, .connection-card, .rule, .features > div, .discord-box"
+    );
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    entry.target.classList.add("visible");
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        },
+        {
+            threshold:.12
+        }
+    );
+
+
+reveal.forEach(element => {
 
     element.style.opacity = "0";
-    element.style.transform = "translateY(35px)";
-    element.style.transition = "opacity .7s ease, transform .7s ease";
 
-    revealObserver.observe(element);
+    element.style.transform =
+        "translateY(35px)";
 
-});
+    element.style.transition =
+        "opacity .8s ease, transform .8s ease";
 
-
-/* ================= ACTIVE NAV ================= */
-
-const sections = document.querySelectorAll("section[id]");
-const navLinks = document.querySelectorAll(".navbar nav a");
-
-window.addEventListener("scroll", function(){
-
-    let current = "";
-
-    sections.forEach(function(section){
-
-        const sectionTop = section.offsetTop - 150;
-
-        if(window.scrollY >= sectionTop){
-            current = section.getAttribute("id");
-        }
-
-    });
-
-    navLinks.forEach(function(link){
-
-        link.style.color = "";
-
-        if(link.getAttribute("href") === "#" + current){
-
-            link.style.color = "#c084fc";
-
-        }
-
-    });
+    observer.observe(element);
 
 });
+
+
+/* ================= REVEAL CLASS ================= */
+
+const style =
+document.createElement("style");
+
+style.innerHTML = `
+
+.mode-card.visible,
+.connection-card.visible,
+.rule.visible,
+.features > div.visible,
+.discord-box.visible{
+
+    opacity:1 !important;
+
+    transform:translateY(0) !important;
+
+}
+
+`;
+
+document.head.appendChild(style);
