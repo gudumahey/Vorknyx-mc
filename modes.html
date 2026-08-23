@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08070a">
 <title>VØRKNYX MC — Game Modes</title>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -11,46 +12,81 @@
 
 <div class="modes-bg"></div>
 
-<header>
-    <a class="brand" href="index.html">⚡ VØRKNYX <span>MC</span></a>
+<header class="site-header">
+
+    <a class="brand" href="index.html">
+        ⚡ VØRKNYX <b>MC</b>
+    </a>
 
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-    <nav id="nav">
-        <a href="index.html">HOME</a>
-        <a href="server.html">SERVER</a>
-        <a class="active" href="modes.html">GAME MODES</a>
-        <a href="rules.html">RULES</a>
-        <a href="discord.html">DISCORD</a>
+    <nav id="nav" class="main-nav">
+
+        <a href="index.html">
+            <span>⌂</span> HOME
+        </a>
+
+        <a href="server.html">
+            <span>⚔</span> SERVER
+        </a>
+
+        <a class="active" href="modes.html">
+            <span>◆</span> GAME MODES
+        </a>
+
+        <a href="rules.html">
+            <span>📜</span> RULES
+        </a>
+
+        <a href="discord.html" class="discord-nav">
+            <span>◈</span> DISCORD
+        </a>
+
     </nav>
+
 </header>
 
 <main class="page">
 
     <div class="page-heading">
+
         <small>CHOOSE YOUR REALM</small>
-        <h1>THE <span>GAME MODES</span></h1>
-        <p>Three different experiences. One network.</p>
+
+        <h1>
+            THE <span>GAME MODES</span>
+        </h1>
+
+        <p>
+            Three different experiences. One network.
+        </p>
+
     </div>
 
 
     <section class="mode-list">
 
 
-        <!-- LIFESTEAL -->
-
         <article class="realm-card lifesteal-card">
 
             <div class="realm-art">
-                <div class="heart">♥</div>
+
+                <div class="heart">
+                    ♥
+                </div>
+
                 <div class="orb"></div>
+
             </div>
 
             <div class="realm-content">
 
-                <small>REALM 01 • SURVIVAL</small>
+                <small>
+                    REALM 01 • SURVIVAL
+                </small>
 
-                <h2>LIFESTEAL</h2>
+                <h2>
+                    LIFESTEAL
+                </h2>
 
                 <p>
                     Every heart matters. Fight other players,
@@ -59,9 +95,11 @@
                 </p>
 
                 <div class="tags">
+
                     <span>⚔ PVP</span>
                     <span>♥ HEARTS</span>
                     <span>☠ SURVIVAL</span>
+
                 </div>
 
                 <a href="server.html" class="realm-btn">
@@ -73,20 +111,28 @@
         </article>
 
 
-        <!-- PRACTICE -->
 
         <article class="realm-card practice-card">
 
             <div class="realm-art">
-                <div class="sword">⚔</div>
+
+                <div class="sword">
+                    ⚔
+                </div>
+
                 <div class="arena"></div>
+
             </div>
 
             <div class="realm-content">
 
-                <small>REALM 02 • COMBAT</small>
+                <small>
+                    REALM 02 • COMBAT
+                </small>
 
-                <h2>PRACTICE</h2>
+                <h2>
+                    PRACTICE
+                </h2>
 
                 <p>
                     Sharpen your PvP skills in intense battles.
@@ -95,9 +141,11 @@
                 </p>
 
                 <div class="tags">
+
                     <span>⚔ COMBAT</span>
                     <span>🎯 TRAINING</span>
                     <span>🔥 DUELS</span>
+
                 </div>
 
                 <a href="server.html" class="realm-btn">
@@ -109,21 +157,29 @@
         </article>
 
 
-        <!-- PILLARS -->
 
         <article class="realm-card pillars-card">
 
             <div class="realm-art">
+
                 <div class="pillar p1"></div>
                 <div class="pillar p2"></div>
-                <div class="treasure">◆</div>
+
+                <div class="treasure">
+                    ◆
+                </div>
+
             </div>
 
             <div class="realm-content">
 
-                <small>REALM 03 • ADVENTURE</small>
+                <small>
+                    REALM 03 • ADVENTURE
+                </small>
 
-                <h2>PILLARS OF FORTUNE</h2>
+                <h2>
+                    PILLARS OF FORTUNE
+                </h2>
 
                 <p>
                     Rise above the competition, survive dangerous
@@ -132,9 +188,11 @@
                 </p>
 
                 <div class="tags">
+
                     <span>🏹 ADVENTURE</span>
                     <span>◆ FORTUNE</span>
                     <span>⚔ BATTLE</span>
+
                 </div>
 
                 <a href="server.html" class="realm-btn">
@@ -145,10 +203,12 @@
 
         </article>
 
+
     </section>
 
 </main>
 
 <script src="script.js"></script>
+
 </body>
 </html>
